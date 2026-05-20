@@ -387,3 +387,161 @@ footer {
 .modal-content #preview-ranking {
     display: block; /* O 'flex', dependiendo de cómo prefieras maquetar el interior */
 }
+
+#modal-auth.modal {
+  display: none; /* Se activa con flex desde JS */
+  position: fixed;
+  z-index: 1100; /* Un paso por encima del otro modal por si acaso */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 13, 42, 0.85); /* Usamos tu var Bordo oscuro con opacidad */
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Caja del formulario adaptada a tu paleta y estilo Glassmorphism */
+#modal-auth .modal-content {
+  background-color: rgba(133, 36, 103, 0.95); /* Tu color violeta sólido/opaco */
+  padding: 35px;
+  border: 2px solid var(--color-primary); /* Borde Rosa neón */
+  border-radius: 12px;
+  width: 90%;
+  max-width: 420px;
+  position: relative;
+  box-shadow: 0 0 25px var(--color-primary), inset 0 0 15px rgba(237, 46, 165, 0.3);
+  text-align: left; /* Alineación limpia para formularios */
+}
+
+/* Botón de cerrar específico (X) */
+#modal-auth .btn-cerrar {
+  color: var(--color-text-muted); /* Celeste brillante */
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px var(--color-text-muted);
+}
+
+#modal-auth .btn-cerrar:hover {
+  color: #fff;
+  text-shadow: 0 0 10px var(--color-primary), 0 0 20px var(--color-primary);
+  transform: scale(1.1);
+}
+
+/* Estructura interna de los formularios inyectados */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-form h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px var(--color-primary);
+}
+
+/* Inputs estilizados con la temática neón */
+.auth-form input {
+  background-color: var(--color-primary-hover); /* Fondo Bordo oscuro */
+  border: 1px solid var(--color-secondary);
+  padding: 14px;
+  color: #fff;
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif; /* Mantiene la fuente de tu juego */
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.auth-form input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 10px var(--color-primary);
+  outline: none;
+  background-color: rgba(44, 13, 42, 0.5);
+}
+
+/* Marcador de posición (Placeholder) */
+.auth-form input::placeholder {
+  color: rgba(48, 192, 183, 0.6); /* Tu celeste brillante con transparencia */
+}
+
+/* Botones de acción del formulario (Enviar) */
+.auth-form button {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px var(--color-primary);
+}
+
+.auth-form button:hover {
+  background-color: #fff;
+  color: var(--color-primary);
+  box-shadow: 0 0 25px #fff;
+  transform: translateY(-2px);
+}
+
+/* Textos alternativos y enlaces (¿No tienes cuenta?) */
+.auth-form p {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+
+.auth-form a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-weight: bold;
+  transition: text-shadow 0.2s ease;
+}
+
+.auth-form a:hover {
+  text-shadow: 0 0 8px var(--color-text-muted);
+}
+
+/* Sistema de alertas (Mensajes de éxito o error de la API) */
+#modal-auth .mensaje {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Alertas de error usando tu color de fondo naranja para resaltar */
+#modal-auth .mensaje.error {
+  background-color: rgba(253, 128, 131, 0.2); 
+  color: var(--color-bg); /* Naranja */
+  border: 1px solid var(--color-bg);
+  text-shadow: 0 0 5px var(--color-bg);
+}
+
+/* Alertas de éxito usando el brillo celeste característico */
+#modal-auth .mensaje.exito {
+  background-color: rgba(48, 192, 183, 0.2);
+  color: var(--color-text-muted); /* Celeste brillante */
+  border: 1px solid var(--color-text-muted);
+  text-shadow: 0 0 8px var(--color-text-muted);
+}
+

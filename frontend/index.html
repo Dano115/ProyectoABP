@@ -23,7 +23,7 @@
         <p class="subtitle">Una aventura épica te espera</p>
         <nav id="menu-juego">
             <ul>
-                <li><a href="juego.html" class="btn-jugar">Iniciar Juego</a></li>
+                <li><a href="#" id="btn-abrir-modal" class="btn-jugar">Iniciar Juego</a></li>
                 <li><a href="#" class="btn-ranking" id="openRanking">Ver Ranking</a></li>
                 <div id="rankingModal" class="modal">
                     <div class="modal-content">
@@ -77,9 +77,9 @@
             <section id="preview-ranking">
                 <h3>Top 3 Jugadores</h3>
                 <ol>
-                    <li>PlayerOne  9999 pts</li>
-                    <li>ShadowNinja  8500 pts</li>
-                    <li>PixelArt  7200 pts</li>
+                    <li>PlayerOne 9999 pts</li>
+                    <li>ShadowNinja 8500 pts</li>
+                    <li>PixelArt 7200 pts</li>
                 </ol>
             </section>
         </div>
@@ -109,6 +109,21 @@
             <p>&copy; 2026 . Todos los derechos reservados.</p>
         </div>
     </footer>
-<script src="scripts.js" defer></script>
+    <script src="scripts.js" defer></script>
+    <div id="modal-auth" class="modal hidden    ">
+        <div class="modal-content">
+            <!-- Botón para cerrar el modal -->
+            <span class="btn-cerrar">&times;</span>
+
+            <!-- Contenedor dinámico donde se renderiza el formulario -->
+            <div id="auth-container">
+                <!-- El contenido de Login o Registro se inyectará aquí con JavaScript -->
+            </div>
+
+            <!-- Zona de mensajes de éxito o error -->
+            <div id="auth-mensaje" class="mensaje hidden"></div>
+        </div>
+    </div>
 </body>
+
 </html>
