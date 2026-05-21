@@ -1,8 +1,8 @@
 {
   "name": "backend-daw",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "admin.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node admin.js"
   }
 }
