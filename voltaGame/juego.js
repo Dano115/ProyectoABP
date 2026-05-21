@@ -189,10 +189,12 @@ function evaluarResultadoRuleta(letra, resultado) {
     if (resultado === "COMODIN_MAS") {
         tiempoTotalSegundos += 15;
         mostrarModalComodin(letra, "¡COMODÍN MALO! +15 Segundos añadidos al cronómetro global.", "#fe0851");
+        abrirRuletaCategoria(letra);
     } 
     else if (resultado === "COMODIN_MENOS") {
         tiempoTotalSegundos = Math.max(0, tiempoTotalSegundos - 15);
         mostrarModalComodin(letra, "¡COMODÍN BUENO! -15 Segundos rebajados del cronómetro global.", "#00ff87");
+        abrirRuletaCategoria(letra);
     } 
     else {
         cargarPreguntaAPI(letra, resultado); 
@@ -209,7 +211,7 @@ function mostrarModalComodin(letra, mensaje, colorTexto) {
 
     document.getElementById('btn-continuar-comodin').addEventListener('click', () => {
         modalPregunta.style.display = "none";
-        evaluarRespuesta(letra, 'VOLTA', null, false);
+        abrirRuletaCategoria(letra);
     });
 }
 
